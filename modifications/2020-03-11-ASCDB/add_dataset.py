@@ -97,6 +97,7 @@ contrib = {
     "units": "kcal / mol",
 }
 ds.units = "kcal/mol"
+ds.set_default_benchmark("Benchmark")
 ds.add_contributed_values(contrib)
 ds.save()
 
