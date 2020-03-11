@@ -81,7 +81,7 @@ for row in rxns:
     ds.add_rxn(name, rxn)
     # We store the values to add in the "Contributed value" dictionary (see below).
     contrib_name.append(name)
-    contrib_value.append(energy)
+    contrib_value.append(float(energy))
 # Save the new subset.
 ds.save()
 #
@@ -96,11 +96,13 @@ contrib = {
     "theory_level_details": {"driver": "energy"},
     "units": "kcal / mol",
 }
-
+ds.units = "kcal/mol"
 ds.add_contributed_values(contrib)
 ds.save()
 
 # Test
 ds = client.get_collection("ReactionDataset", dataset_name)
 print(ds.list_values())
+ds._ensure_contributed_values()
 print(ds.get_values(native=False))
+print(ds.data.metadata['citations'])

@@ -16,6 +16,7 @@
 
 ## Notes
 
+* Ref: P. Morgante, R. Peverati, "Statistically representative databases for density functional theory via data science", Phys. Chem. Chem. Phys. 2019, 21(35), 19092–19103. DOI:10.1039/C9CP03211H.
 * The benchmark level of theory is heterogeneous and includes CCSD(T) and CASPT2. See issue #1.
 
 ## Manifest
