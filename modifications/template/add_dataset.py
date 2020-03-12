@@ -17,7 +17,9 @@ print(client)
 
 # The new subset you want to add.
 dataset_name = "TODO"
-ds = ptl.collections.ReactionDataset(dataset_name, client=client)
+tagline = "TODO"  # a short, one-line description of the dataset
+description = """TODO""" # an extended, multi-line description of the dataset
+ds = ptl.collections.ReactionDataset(dataset_name, client=client, tagline=tagline, description=description)
 
 # Add the paper
 ds.data.metadata["citations"] = [
