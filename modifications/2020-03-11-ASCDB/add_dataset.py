@@ -21,6 +21,10 @@ print(client)
 
 # The new subset you want to add.
 dataset_name = "ASCDB"
+# The tagline is a sentence that describes your database.
+# For example, for ASCDB is
+tagline = """A small database of statistically significant chemical properties ranging from transition metals
+to artificial molecules coming from the three largest computational databases in the literature: MGCDB84, GMTKN55, and Minnesota 2015B"""
 ds = ptl.collections.ReactionDataset(dataset_name, client=client)
 
 # Add the paper
@@ -99,6 +103,7 @@ contrib = {
 ds.units = "kcal/mol"
 ds.set_default_benchmark("Benchmark")
 ds.add_contributed_values(contrib)
+ds.data.__dict__["tagline"] = tagline
 ds.save()
 
 # Test
